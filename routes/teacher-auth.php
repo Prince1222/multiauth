@@ -19,7 +19,7 @@ Route::middleware('guest:teacher')->prefix('teacher')->name('teacher.')->group(f
 
 });
 
-Route::middleware('auth:teacher')->prefix('teacher')->name('teacher.')->group(function () {
+Route::middleware(['auth:teacher'])->prefix('teacher')->name('teacher.')->group(function () {
    
     Route::get('/dashboard', function () {
         return view('teacher.dashboard');
